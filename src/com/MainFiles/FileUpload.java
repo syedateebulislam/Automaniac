@@ -14,6 +14,14 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 
+/*
+ *Tasks to be done here-
+ *1- Uploading validations of correct file(syntax,required format,etc).
+ *2- Any other future validations required.
+ *
+ * */
+
+
 @WebServlet("/FileUpload")
 public class FileUpload extends HttpServlet {
 
@@ -25,10 +33,9 @@ public class FileUpload extends HttpServlet {
 			List<FileItem> uploadedFiles = sf.parseRequest(request);
 			
 			for(FileItem item: uploadedFiles) {
-				System.out.println("Inside for loop.");//DemoApp\src\com\DemoApp
 				item.write(new File("/Users/Dell/Desktop/Office Stuff/Automaniac/src/com/UploadedFiles/"+item.getName()));
 			}			
-			System.out.println("Uploaded");
+			System.out.println("File Uploaded Successfully...");//add js here for success notification
 		} catch (FileUploadException e) {
 			e.printStackTrace();
 		} catch (Exception e) {

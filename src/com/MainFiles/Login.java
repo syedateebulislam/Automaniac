@@ -10,9 +10,6 @@ import javax.servlet.http.HttpSession;
 
 import com.Dao.LoginDao;
 
-/**
- * Servlet implementation class Login
- */
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,14 +21,14 @@ public class Login extends HttpServlet {
 				LoginDao dao=new LoginDao();
 				
 				if(dao.readinDb(username, password)) {
-					System.out.println("user logged in");
+					System.out.println("User Successfully logged in...");
 					HttpSession session=request.getSession();
 					session.setAttribute("username",username);
 					response.sendRedirect("editpage_html.html");
 				}
 				else {
-					System.out.println("invlid credentials");
-					response.sendRedirect("Homepage.html");
+					System.out.println("Invlid User Credentials...");
+					response.sendRedirect("Homepage.html");//add js here for error message
 				}
 		}
 }
