@@ -1,3 +1,5 @@
+//Ateeb branch code
+
 package com.DemoApp;//changing package name after Upload
 
 import java.awt.Desktop.Action;
@@ -26,7 +28,7 @@ public class launchbrowser {
 	public static void Test() throws InterruptedException {
 		WebDriver driver = null;
 		System.out.println("launchbrowser.Test script started.");
-//trying one
+
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\Dell\\Desktop\\Office Stuff\\DemoApp\\Driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(25,TimeUnit.SECONDS);
