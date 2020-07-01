@@ -1,4 +1,4 @@
-package com.DemoApp;
+package com.MainFiles;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,7 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.DemoApp.RunScript;
+
+import com.MainFiles.RunScript;
 
 @WebServlet("/RunUpload")
 public class RunUpload extends HttpServlet {

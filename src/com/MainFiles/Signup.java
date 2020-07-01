@@ -1,4 +1,4 @@
-package com.DemoApp;
+package com.MainFiles;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
