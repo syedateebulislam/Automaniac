@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.DemoApp.dao.LoginDao;
+import com.Dao.LoginDao;
 
 /**
  * Servlet implementation class Signup

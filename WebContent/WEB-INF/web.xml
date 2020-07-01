@@ -3,7 +3,7 @@
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
     <servlet-name>FileUpload</servlet-name>
-    <servlet-class>com.DemoApp.FileUpload</servlet-class>
+    <servlet-class>com.MainFiles.FileUpload</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>FileUpload</servlet-name>
@@ -12,7 +12,7 @@
   
   <servlet>
     <servlet-name>RunUpload</servlet-name>
-    <servlet-class>com.DemoApp.RunUpload</servlet-class>
+    <servlet-class>com.MainFiles.RunUpload</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>RunUpload</servlet-name>

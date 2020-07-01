@@ -26,7 +26,7 @@ public class FileUpload extends HttpServlet {
 			
 			for(FileItem item: uploadedFiles) {
 				System.out.println("Inside for loop.");//DemoApp\src\com\DemoApp
-				item.write(new File("/Users/Dell/Desktop/Office Stuff/DemoApp/src/com/DemoApp/UploadedFiles/"+item.getName()));
+				item.write(new File("/Users/Dell/Desktop/Office Stuff/Automaniac/src/com/UploadedFiles/"+item.getName()));
 			}			
 			System.out.println("Uploaded");
 		} catch (FileUploadException e) {
