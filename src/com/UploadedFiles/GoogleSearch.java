@@ -1,4 +1,4 @@
-package com.DemoApp.UploadedFiles;//change this dynamically during upload
+package com.UploadedFiles;//change this dynamically during upload
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

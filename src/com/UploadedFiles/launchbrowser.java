@@ -1,4 +1,4 @@
-package com.DemoApp.UploadedFiles;//changing package name after Upload
+package com.UploadedFiles;//changing package name after Upload
 
 import java.awt.Desktop.Action;
 import java.util.concurrent.TimeUnit;

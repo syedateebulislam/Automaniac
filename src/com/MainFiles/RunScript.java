@@ -1,9 +1,6 @@
 package com.MainFiles;
 
-//import java.io.File;
-//import javax.tools.*;
-
-import com.DemoApp.UploadedFiles.*;
+import com.UploadedFiles.*;
 
 
 public class RunScript {
