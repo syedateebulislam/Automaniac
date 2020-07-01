@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit page</title>
+<link rel="stylesheet" type="text/css" href="editpage_CSS.css">
+</head>
+
+<body>
+<h1>Automaniac</h1>
+
+              <div id="hero-hmpgtxt">
+              				
+					  <form action="upload" method="post" enctype="multipart/form-data">
+					  <h2><center>Contribute Here</center></h2>
+					  
+					  <fieldset>
+						<legend><h3>Script Area</h3></legend>
+						
+						<p>
+ 						 <label><!-- &nbsp&nbsp&nbsp&nbspInput1:
+								<input type="text" name="input1" size="30" placeholder="input1" id="input1" required>&nbsp&nbsp&nbsp&nbsp
+						 		Input2:
+								<input type="text" name="input2" size="30" placeholder="input2" id="input2" required>&nbsp&nbsp&nbsp&nbsp --> 
+								<input class="uploadbutton" type="file" name="file" multiple>
+						 </label>
+						</p><br><br>
+						
+						
+						<fieldset><!-- 
+						 <legend>Description of Script:</legend>
+								<label>
+								<textarea rows="7" cols="120" name=co maxlength="160" name="desc"></textarea>
+								</label> -->
+						</fieldset><br><br>
+					   
+					    </fieldset><br><br>
+					   
+					   <center><input class="resetbutton" type="reset" value="RESET">
+					   	       <input class="submitbutton" type="submit" value="SUBMIT">
+					   </center><br><br>
+					</form>
+
+					
+					<form action="runUpload" method="post" enctype="multipart/form-data">
+					  <h2><center>Run Here</center></h2>
+					  
+					  <fieldset>
+					
+					   <center>
+					   	       <input class="submitbutton" type="submit" value="Run Script">
+					   </center><br><br>
+					   
+					   </fieldset>
+					</form>
+              </div>
+</div>
+
+</body>
+</html>

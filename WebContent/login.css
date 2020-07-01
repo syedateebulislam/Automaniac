@@ -1,0 +1,49 @@
+
+body
+{
+	background : url("wall1.jpg") fixed ;
+	background-size: 100%; 
+}
+
+a {
+  color: black;
+}
+
+.jumbotron {
+  padding-top: 0px;
+  padding-bottom: 5px;
+  padding-bottom: 5px;
+  color: inherit;
+  background-color: white;
+}
+
+.pgname{
+	font-family: courier new,georgia;
+	padding-top: 5px;
+	font-size: 30px;
+	letter-spacing: 5px;
+	text-shadow: 1px 1px 1px black;
+	margin-left: 80px;
+}
+
+.navtab{
+	margin-top: -38px;
+	font-weight: bold;
+}
+
+.abouttext{
+	margin-top: 140px;
+	color: white;
+  	letter-spacing: 1px;
+	font-size: 18px;
+  	text-align: center;
+}
+
+.signuptext{
+	letter-spacing: 3px;
+	font-size: 22px;
+	text-align: center;
+	color: white;
+	margin-top: 60px;
+	letter-spacing: px;
+}

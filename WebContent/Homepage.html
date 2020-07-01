@@ -1,0 +1,144 @@
+<html>
+<head>
+	<title>
+		Homepage
+	</title>
+ 	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+
+<body>
+<div class="jumbotron">
+ 	<div class="pgname">Automaniac</div>	
+		<div class="container">
+					<div class="row">
+						<div class="col-xs-8 col-xs-offset-4">
+							<div class="navtab">
+							<ul class="nav nav-pills nav-justified">
+								<li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon glyphicon-pencil"></span> About</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> FAQs</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Contact us</a></li>					
+							</ul>
+							</div>
+						</div>
+					</div>
+		</div>
+	</div>
+</div>	
+		
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+					<div class="abouttext">	
+						<p>&quot;The first rule of any technology used in a business is that automation applied to an efficient operation will magnify the efficiency. The second is that automation applied to an inefficient operation will magnify the inefficiency. &quot;</p>
+						<small>- Bill Gates</small>
+		        	</div>
+		     </div>
+		</div>        	
+
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
+				<div class="signuptext">	
+		            	<b>Would You Like To Contribute With Script ?</b><br/><br/>
+		    		    <input class="btn" data-target="#loginModal" data-toggle="modal" type="button" name="login" value="Log-In" style="box-shadow: 1px 1px 1px 1px black ; background-color: #4CAF50;">
+		    		    <sub>OR</sub>
+		    		    <input class="btn" data-target="#signupModal" data-toggle="modal" type="button" name="signup" value="Sign-Up" style="box-shadow: 1px 1px 1px 1px black;background-color: #6e59ff;"><br>	
+				</div>
+			</div>
+		</div>
+	</div>	
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="modal" id="loginModal" tabindex="-1">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Login</h4>
+								</div>
+								<div class="modal-body">
+									<form action="Login" method="get">
+										<div class="form-group">
+											<label for="inputemailid">Email ID</label>
+											<input class="form-control" type="text" placeholder="First Name" id="inputemailid" name="username">
+										</div>
+										<div class="form-group">
+											<label for="inputpassword">Password</label>
+											<input class="form-control" type="Password" placeholder="Login Password" id="inputpassword" name="password">
+										</div>
+								
+										<button class="btn btn-success" type="submit">Login</button>
+									
+										<button class="btn btn-primary" data-dismiss="modal">Close</button>
+									</form> 
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="modal" id="signupModal" tabindex="-1">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Signup</h4>
+								</div>
+								<div class="modal-body">
+									<form action="Signup" method="get">
+										<div class="form-group">
+											<label for="inputfirstname">First Name</label>
+											<input class="form-control" type="text" placeholder="Login Id" id="inputfirstname" name="fname">
+										</div>
+										<div class="form-group">
+											<label for="inputlastname">Last Name</label>
+											<input class="form-control" type="text" placeholder="Last Name" id="inputlastname" name="lname">
+										</div>
+										<label for="inputgender" >Gender</label>
+										<select class="form-control" name="gender">
+											<option>Male</option>
+											<option>Female</option>
+											<option>Other</option>
+										</select>
+										<label for="inputcountry" >Country</label>
+										<select class="form-control" name="country">
+											<option>India</option>
+											<option>US</option>
+											<option>UK</option>
+											<option>China</option>
+											<option>Russia</option>
+											<option>Germany</option>
+											<option>Other</option>
+										</select>
+
+										<div class="form-group">
+											<label for="inputemailid">Email ID</label>
+											<input class="form-control" type="email" placeholder="Email ID (eg:Gmail,Rediff,etc)" id="inputemailid" name ="email">
+										</div>
+										<div class="form-group">
+											<label for="inputnewpassword">Password</label>
+											<input class="form-control" type="Password" placeholder="New Password" id="inputnewpassword" name="password">
+										</div>
+									
+								
+									<button class="btn btn-success" type="submit">Submit</button>
+									<button class="btn btn-primary" data-dismiss="modal">Close</button>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
