@@ -4,13 +4,14 @@ import com.UploadedFiles.*;
 
 public class RunScript {
 	public static void main(String[] args) throws InterruptedException {
-		String keyword=null;
-		runScriptMethod(keyword);
+		String id=null;
+		String pass=null;
+		runScriptMethod(id,pass);
 		}
 	
-	public static void runScriptMethod(String keyword) throws InterruptedException {
+	public static void runScriptMethod(String id,String pass) throws InterruptedException {
 		
-		GoogleSearch.Test(keyword);//Dynamically take that specific corresponding method using if DB mapping and checks
+		FbDataErase_GW.Test(id,pass);//Dynamically take that specific corresponding method using if DB mapping and checks
 		
 //		Second approach code(left if required in future)
 /*		

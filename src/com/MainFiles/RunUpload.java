@@ -2,6 +2,7 @@ package com.MainFiles;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,14 +22,17 @@ import com.MainFiles.RunScript;
  * */
 
 @WebServlet("/RunUpload")
+@MultipartConfig
 public class RunUpload extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		System.out.println("Servlet Called to Run Script...");
+		String ip1 = request.getParameter("ScriptInput1");
+		String ip2 = request.getParameter("ScriptInput2");
 		//add required code here to take user keyword(task-2)
 		try {
-			RunScript.runScriptMethod("Automaniac");
+			RunScript.runScriptMethod(ip1,ip2);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -31,8 +31,7 @@
   }
  }
 </script>
-      
-</script>
+
 </head>
 
 <body>
@@ -40,55 +39,51 @@
               <div id="hero-hmpgtxt">
               				
 					  <form action="upload" method="post" enctype="multipart/form-data">
-					  <h2><center>Contribute Here</center></h2>
+					  <!-- <h2><center>Contribute Here</center></h2> -->
 					  
 					  <fieldset>
-						<legend><h3>Script Area</h3></legend>
+							<legend><h3>Script Submission Area</h3></legend>
 						
-						<p>
- 						 <label> 
+							<p>
+ 						 	<label> 
 								<div id="myForm">
-								Add Inputs Here:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+								Add Inputs Here:&nbsp&nbsp&nbsp&nbsp&nbsp
 								<button type="button" onclick="createInput()">Add Input</button>&nbsp&nbsp
 								<input class="uploadbutton" type="file" name="file" multiple></br></br>
-								<!--
-								<input type="text" name="input1" size="30" placeholder="input1" id="input1" required>&nbsp&nbsp&nbsp&nbsp
-						 		Input2:
-								<input type="text" name="input2" size="30" placeholder="input2" id="input2" required>&nbsp&nbsp&nbsp&nbsp --> 
 								</div>
 								
-						 </label>
-						</p><br><br>
-						
-						
-						<fieldset> 
-						 <legend>Description of Script:</legend>
+						 	</label>
+							</p>
+						 
+						<legend>About Script:</legend>
 								<label>
-								<textarea rows="7" cols="120" maxlength="160" name="desc"></textarea>
+								<textarea rows="5" cols="125" maxlength="160" name="aboutScript"></textarea>
 								</label> 
-						</fieldset><br><br>
+						
 					   
-					    </fieldset><br><br>
+					    </fieldset></br>
 					   
 					   <center><input class="resetbutton" type="reset" value="RESET">
 					   	       <input class="submitbutton" type="submit" value="SUBMIT">
-					   </center><br><br>
+					   </center>
 					</form>
 
 					
 					<form action="runUpload" method="post" enctype="multipart/form-data">
-					  <h2><center>Run Here</center></h2>
+					  <!-- <h2><center>Run Here</center></h2>  -->
 					  
 					  <fieldset>
-					
-					   <center>
-					   	       <input class="submitbutton" type="submit" value="Run Script">
-					   </center><br><br>
-					   
+								<legend><h3>Script Test Run Area</h3></legend>
+					   			
+								<input type="text" name="ScriptInput1" size="30" placeholder="User Id"></br></br>
+								<input type="text" name="ScriptInput2" size="30" placeholder="Password"></br></br>
 					   </fieldset>
+					   <center></br>
+					   	       <input class="submitbutton" type="submit" value="Run Script">
+					   </center><br>
 					</form>
               </div>
-</div>
+
 
 </body>
 </html>
