@@ -3,11 +3,40 @@
 <head>
 <title>Edit page</title>
 <link rel="stylesheet" type="text/css" href="editpage_CSS.css">
+ <script>
+ 
+ var i=0;
+ function createInput() {
+    if(i<2){ 
+    i++;
+    var userInputName = document.createElement("INPUT");
+    var userDesc = document.createElement("INPUT");
+    
+    userInputName.innerHTML="Input"+i;
+    userDesc.innerHTML="Input"+i;
+    
+    userInputName.setAttribute("placeholder","Input "+i+ " name");
+    userInputName.setAttribute("name","input"+i);
+    userDesc.setAttribute("placeholder","Input " +i+ " sample value");
+    userDesc.setAttribute("name","sampleValue"+i);
+    
+    var br= document.createElement("BR");
+    document.getElementById("myForm").appendChild(userInputName);
+    document.getElementById("myForm").appendChild(userDesc);
+    //document.body.appendChild(userInput);
+    document.getElementById("myForm").appendChild(br);
+  }
+  else{
+      alert("Can't add more Inputs")
+  }
+ }
+</script>
+      
+</script>
 </head>
 
 <body>
-<h1>Automaniac</h1>
-
+<h1>&nbsp&nbspAutomaniac</h1>
               <div id="hero-hmpgtxt">
               				
 					  <form action="upload" method="post" enctype="multipart/form-data">
@@ -17,20 +46,26 @@
 						<legend><h3>Script Area</h3></legend>
 						
 						<p>
- 						 <label><!-- &nbsp&nbsp&nbsp&nbspInput1:
+ 						 <label> 
+								<div id="myForm">
+								Add Inputs Here:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+								<button type="button" onclick="createInput()">Add Input</button>&nbsp&nbsp
+								<input class="uploadbutton" type="file" name="file" multiple></br></br>
+								<!--
 								<input type="text" name="input1" size="30" placeholder="input1" id="input1" required>&nbsp&nbsp&nbsp&nbsp
 						 		Input2:
 								<input type="text" name="input2" size="30" placeholder="input2" id="input2" required>&nbsp&nbsp&nbsp&nbsp --> 
-								<input class="uploadbutton" type="file" name="file" multiple>
+								</div>
+								
 						 </label>
 						</p><br><br>
 						
 						
-						<fieldset><!-- 
+						<fieldset> 
 						 <legend>Description of Script:</legend>
 								<label>
-								<textarea rows="7" cols="120" name=co maxlength="160" name="desc"></textarea>
-								</label> -->
+								<textarea rows="7" cols="120" maxlength="160" name="desc"></textarea>
+								</label> 
 						</fieldset><br><br>
 					   
 					    </fieldset><br><br>
