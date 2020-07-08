@@ -7,7 +7,7 @@ public class RunScript {
 		String id=null;
 		String pass=null;
 		runScriptMethod(id,pass);
-		//abc
+		//abcd
 		}
 	
 	public static void runScriptMethod(String id,String pass) throws InterruptedException {
