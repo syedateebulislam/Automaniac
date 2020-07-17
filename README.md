@@ -10,5 +10,5 @@ Overall tasks to be done:
 6. We will **write separate scripts** for various other 'interesting' tasks(interest can be defined mutually,like- '.index' used web series downloading 	tasks script,torrent or subtitle download script,Free software or cracks download scripts,free e-book pdfdrive download scripts,etc).
 7. We will **upload our scripts** from latest UI with our own specific user id (good to have as demo).
 8. Need to think on **Jython** or something for Python-selenium scripts support from this platform.
-
+9. Add **toastr CDN** for mini notifications on UI
 * Feel free to append anything from your side.
