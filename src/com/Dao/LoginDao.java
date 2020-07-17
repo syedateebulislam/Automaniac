@@ -5,134 +5,85 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class LoginDao {
-	String url="jdbc:mysql://localhost:3306/test";
-	String dbUsername="root";
-	String dbPassword="1723504@Mysql";
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
 
-	public boolean createinDB(String fname,String lname,String gender,String country,String email,String password) {
-		
-		String sql1="insert into userdetails values(?,?,?,?,?,?)";
-		String sql2="insert into user values(?,?)";
-		boolean q1=false;
-		boolean q2=false;
-		
-		System.out.println("fname:"+fname+",lname:"+lname+",gender:"+gender+",country:"+country+",email:"+email+",password:"+password);
-		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection(url,dbUsername,dbPassword);
-			PreparedStatement st1 = con.prepareStatement(sql1);
-			st1.setString(1, fname);
-			st1.setString(2, lname);
-			st1.setString(3, gender);
-			st1.setString(4, country);
-			st1.setString(5, email);
-			st1.setString(6, password);
-			int rowsAffected1=st1.executeUpdate();
-			if(rowsAffected1!=0) {
-				System.out.println("userdetails Rows affected - "+rowsAffected1);
-				q1= true;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
+import com.MainFiles.UserDetails;
+
+public class LoginDao {
+
+	Configuration con = new Configuration().configure().addAnnotatedClass(UserDetails.class);	
+	ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).buildServiceRegistry();
+	SessionFactory sf = con.buildSessionFactory(reg);
+
+	public boolean SignUp(String fname,String lname,String gender,String country,String email,String password) {		
+	
+		boolean NullValue=false;
+		boolean duplicateUser=false;
+		if(fname.isEmpty() || lname.isEmpty() || gender.isEmpty() || country.isEmpty() || email.isEmpty() || password.isEmpty()){
+			NullValue = true;
 		}
 		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection(url,dbUsername,dbPassword);
-			PreparedStatement st2 = con.prepareStatement(sql2);
-			st2.setString(1, fname);
-			st2.setString(2, password);
-			int rowsAffected2=st2.executeUpdate();
-			if(rowsAffected2!=0) {
-				System.out.println("user Rows affected - "+rowsAffected2);
-				q2= true;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		if(q1 && q2) {
-			return true;
-		}
-		else {
+		if(NullValue) {
+			System.out.println("Null value sent for SignUp.");		
 			return false;
 		}
-			
-		}
+		else 
+		{	
+			Session session1 = sf.openSession();
+	    	Transaction tx1 = session1.beginTransaction(); 
+	    	    	
+	    	Query q = session1.createQuery("select fname from UserDetails where fname=:u");
+	    	q.setParameter("u", fname);
+	    	String duplicate = (String) q.uniqueResult();
 
-	
-	public boolean readinDb(String username,String password) {
-	
-	String sql="select * from user where username=? and password=?";
-
-	try {
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection(url,dbUsername,dbPassword);
-		PreparedStatement st = con.prepareStatement(sql);
-		st.setString(1, username);
-		st.setString(2, password);
-		ResultSet rs=st.executeQuery();
-		if(rs.next()) {
-			return true;
+	    	tx1.commit();
+	    	
+	    	if(fname.equalsIgnoreCase(duplicate)) {
+	    		duplicateUser=true;
+	    	}else {
+	    		duplicateUser= false;
+	    	}
+			if(duplicateUser) {
+				System.out.println("username not available");
+			}else {
+				UserDetails user = new UserDetails();		
+				user.setFname(fname);
+				user.setLname(lname);
+				user.setGender(gender);
+				user.setCountry(country);
+				user.setEmailId(email);
+				user.setPassword(password);
+				
+		    	Session session2 = sf.openSession();	    	
+		    	Transaction tx2 = session2.beginTransaction(); 
+		    	
+		    	session2.save(user); //save data
+		    	
+		    	tx2.commit();	    	
+		    	return true;
+			}
 		}
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
 		return false;
 	}
-	
-public boolean scriptSubmissionInDB(String fname,String lname,String gender,String country,String email,String password) {
-		
-		String sql1="insert into userdetails values(?,?,?,?,?,?)";
-		String sql2="insert into user values(?,?)";
-		boolean q1=false;
-		boolean q2=false;
-		
-		System.out.println("fname:"+fname+",lname:"+lname+",gender:"+gender+",country:"+country+",email:"+email+",password:"+password);
-		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection(url,dbUsername,dbPassword);
-			PreparedStatement st1 = con.prepareStatement(sql1);
-			st1.setString(1, fname);
-			st1.setString(2, lname);
-			st1.setString(3, gender);
-			st1.setString(4, country);
-			st1.setString(5, email);
-			st1.setString(6, password);
-			int rowsAffected1=st1.executeUpdate();
-			if(rowsAffected1!=0) {
-				System.out.println("userdetails Rows affected - "+rowsAffected1);
-				q1= true;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection(url,dbUsername,dbPassword);
-			PreparedStatement st2 = con.prepareStatement(sql2);
-			st2.setString(1, fname);
-			st2.setString(2, password);
-			int rowsAffected2=st2.executeUpdate();
-			if(rowsAffected2!=0) {
-				System.out.println("user Rows affected - "+rowsAffected2);
-				q2= true;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		if(q1 && q2) {
-			return true;
-		}
-		else {
-			return false;
-		}
-			
-		}
+
+	public boolean Login(String username,String password) {
+		Session session = sf.openSession();
+    	Transaction tx = session.beginTransaction(); 
+    	    	
+    	Query q = session.createQuery("select password from UserDetails where fname=:u");
+    	q.setParameter("u", username);
+    	String pass = (String) q.uniqueResult();
+
+    	if(password.equalsIgnoreCase(pass)) {
+    		return true;
+    	}
+    	tx.commit();    	
+		return false;
+	}	
 }

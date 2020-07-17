@@ -20,7 +20,7 @@ public class Login extends HttpServlet {
 				
 				LoginDao dao=new LoginDao();
 				
-				if(dao.readinDb(username, password)) {
+				if(dao.Login(username, password)) {
 					System.out.println("User Successfully logged in...");
 					HttpSession session=request.getSession();
 					session.setAttribute("username",username);

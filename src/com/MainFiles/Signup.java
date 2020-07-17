@@ -25,7 +25,7 @@ public class Signup extends HttpServlet {
 		
 		LoginDao dao=new LoginDao();
 		
-		if(dao.createinDB(fname, lname,gender,country,email,password)) {
+		if(dao.SignUp(fname, lname,gender,country,email,password)) {
 			System.out.println("signedup successfull");
 			response.sendRedirect("Homepage.html");//add js  with try login message
 		}else {
