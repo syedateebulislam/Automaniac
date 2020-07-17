@@ -14,7 +14,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
 import com.MainFiles.UserDetails;
-
+//slack try 1
 public class LoginDao {
 
 	Configuration con = new Configuration().configure().addAnnotatedClass(UserDetails.class);	
