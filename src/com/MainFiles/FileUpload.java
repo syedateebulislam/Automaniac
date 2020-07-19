@@ -22,11 +22,14 @@ import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FileUtils;
+
+import com.Dao.ScriptDao;
+
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 
 /*
  *Tasks to be done here-
- *1- Uploading validations of correct file(syntax,required format,etc).
+ *1- Uploading validations of correct file(syntax,required format,etc). -- Achieved (will add size validation later)
  *2- Any other future validations required.
  *
  * */
@@ -38,6 +41,7 @@ public class FileUpload extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Entered into upload servlet...");
+				
 		String scriptName = request.getParameter("scriptName");
 		String ip1ActualFullName = request.getParameter("input1");
 		String ip1DefinedVarNameInCode = request.getParameter("definedVar1");
@@ -46,21 +50,27 @@ public class FileUpload extends HttpServlet {
 		String aboutScript = request.getParameter("aboutScript");
 		System.out.println(scriptName+","+ip1ActualFullName+","+ip1DefinedVarNameInCode+","+ip2ActualFullName+","+ip2DefinedVarNameInCode+","+aboutScript);
 		
+		Random r = new Random();
+		String username="Ateeb_Run";//take this from session value
+		int scriptId=r.nextInt(10000);
+		String GeneratedScriptFileName=username+"_"+scriptId;
+		
 		Part filePart = request.getPart("file");
-	    String uploadedFileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+	    String uploadedFileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
 	    InputStream fileContent = filePart.getInputStream();
 	    File targetFile = new File("/Users/Dell/Desktop/Office Stuff/Automaniac/src/com/UploadedFiles/"+uploadedFileName);
 	    FileUtils.copyInputStreamToFile(fileContent, targetFile);
-	    
-		Random r = new Random();
-		String username="Ateeb_Run";//take this from session value
-		int scriptId=r.nextInt(1000);
-		String GeneratedScriptFileName=username+"_"+scriptId;
-
-	    
+	    	    
 	    System.out.println("fileName in servlet - "+uploadedFileName);
 	    String[] fname = {uploadedFileName,GeneratedScriptFileName};
+	    
+	    // Sending for File Handling
 	    FileHandling.main(fname);
+	    
+	    // Sending for Hibernate Integration
+	    ScriptDao dao = new ScriptDao();
+	    dao.SubmitScript(username, scriptId, scriptName, uploadedFileName, GeneratedScriptFileName, ip1ActualFullName, ip1DefinedVarNameInCode, ip2ActualFullName, ip2DefinedVarNameInCode, aboutScript);
+	    
 	    response.sendRedirect("editpage_html.html");
 	}
 }

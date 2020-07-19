@@ -1,10 +1,10 @@
-package com.UploadedFiles;
+package com.RunFiles;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 //always tell devs to follw this convetion
-public class GoogleSearch {
+public class Ateeb_Run_4161{
 
 	public static void main(String[] args) throws InterruptedException {
 		String keyword=null;

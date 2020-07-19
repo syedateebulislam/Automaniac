@@ -8,55 +8,68 @@ public class Submitted_Script {
 
 	@Id
 	private int scriptId;
-	private String name;
-	private int inpReq;
-	private String input1;
-	private String sampleValue1;
-	private String input2;
-	private String sampleVaue2;
+	private String username;
+	private String scriptName;
+	private String uploadedFileName;
+	private String GeneratedScriptFileName;
+	private String ip1ActualFullName;
+	private String ip1DefinedVarNameInCode;
+	private String ip2ActualFullName;
+	private String ip2DefinedVarNameInCode;
 	private String aboutScript;
-	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public int getScriptId() {
 		return scriptId;
 	}
 	public void setScriptId(int scriptId) {
 		this.scriptId = scriptId;
 	}
-	public String getName() {
-		return name;
+	public String getScriptName() {
+		return scriptName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setScriptName(String scriptName) {
+		this.scriptName = scriptName;
 	}
-	public int getInpReq() {
-		return inpReq;
+	public String getUploadedFileName() {
+		return uploadedFileName;
 	}
-	public void setInpReq(int inpReq) {
-		this.inpReq = inpReq;
+	public void setUploadedFileName(String uploadedFileName) {
+		this.uploadedFileName = uploadedFileName;
 	}
-	public String getInput1() {
-		return input1;
+	public String getGeneratedScriptFileName() {
+		return GeneratedScriptFileName;
 	}
-	public void setInput1(String input1) {
-		this.input1 = input1;
+	public void setGeneratedScriptFileName(String generatedScriptFileName) {
+		GeneratedScriptFileName = generatedScriptFileName;
 	}
-	public String getSampleValue1() {
-		return sampleValue1;
+	public String getIp1ActualFullName() {
+		return ip1ActualFullName;
 	}
-	public void setSampleValue1(String sampleValue1) {
-		this.sampleValue1 = sampleValue1;
+	public void setIp1ActualFullName(String ip1ActualFullName) {
+		this.ip1ActualFullName = ip1ActualFullName;
 	}
-	public String getInput2() {
-		return input2;
+	public String getIp1DefinedVarNameInCode() {
+		return ip1DefinedVarNameInCode;
 	}
-	public void setInput2(String input2) {
-		this.input2 = input2;
+	public void setIp1DefinedVarNameInCode(String ip1DefinedVarNameInCode) {
+		this.ip1DefinedVarNameInCode = ip1DefinedVarNameInCode;
 	}
-	public String getSampleVaue2() {
-		return sampleVaue2;
+	public String getIp2ActualFullName() {
+		return ip2ActualFullName;
 	}
-	public void setSampleVaue2(String sampleVaue2) {
-		this.sampleVaue2 = sampleVaue2;
+	public void setIp2ActualFullName(String ip2ActualFullName) {
+		this.ip2ActualFullName = ip2ActualFullName;
+	}
+	public String getIp2DefinedVarNameInCode() {
+		return ip2DefinedVarNameInCode;
+	}
+	public void setIp2DefinedVarNameInCode(String ip2DefinedVarNameInCode) {
+		this.ip2DefinedVarNameInCode = ip2DefinedVarNameInCode;
 	}
 	public String getAboutScript() {
 		return aboutScript;
