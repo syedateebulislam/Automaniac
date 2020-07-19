@@ -1,4 +1,4 @@
-package com.UploadedFiles;
+package com.RunFiles;
 
 import java.awt.Desktop.Action;
 //import java.awt.List;
@@ -19,23 +19,15 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class FbDataErase_GW {
+public class Ateeb_Run_778{
 
-	public static void main(String[] args) throws InterruptedException {
-		String userId=null;
-		String password=null;
-		Test(userId,password);
-		//checking anything
-	}
-
+	public static WebDriver driver = null;
 	
-	public static void Test(String userId,String pass) throws InterruptedException {
-
-		WebDriver driver = null;
-
+	public static void main(String[] args) throws InterruptedException,NoSuchElementException {
+		
 		System.out.println("Github Ateeb Branch code is running...");
 		
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Dell\\Desktop\\Office Stuff\\Automaniac\\Driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Dell\\Desktop\\Office Stuff\\selenium_java\\Driver\\chromedriver.exe");
 		
 		//Create a map to store  preferences 
 		Map<String, Object> prefs = new HashMap<String, Object>();
@@ -51,7 +43,7 @@ public class FbDataErase_GW {
 		options.setExperimentalOption("prefs", prefs);
 
 		//Now Pass ChromeOptions instance to ChromeDriver Constructor to initialize chrome driver which will switch off this browser notification on the chrome browser
-		driver = new ChromeDriver(options);
+		WebDriver driver = new ChromeDriver(options);
 		driver.manage().timeouts().implicitlyWait(25,TimeUnit.SECONDS);
 		
 		//open the web
@@ -62,11 +54,11 @@ public class FbDataErase_GW {
 		
 		WebElement Emailid=driver.findElement(By.id("email"));
 		Emailid.click();
-		Emailid.sendKeys(userId);//Jordan Selenium		
+		Emailid.sendKeys("9958098566");//Jordan Selenium		
 		Thread.sleep(2000);
 		
 		WebElement password=driver.findElement(By.id("pass"));
-		password.sendKeys(pass);//sampletest@Facebook
+		password.sendKeys("1723504friends");//sampletest@Facebook
 		Thread.sleep(2000);
 		
 		//press login button

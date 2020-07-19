@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -37,19 +38,29 @@ public class FileUpload extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Entered into upload servlet...");
-		String ip1 = request.getParameter("input1");
-		String sv1 = request.getParameter("sampleValue1");
-		String ip2 = request.getParameter("input2");
-		String sv2 = request.getParameter("sampleValue2");
-		String abtScr = request.getParameter("aboutScript");
-		System.out.println(ip1+","+sv1+","+ip2+","+sv2+","+abtScr);
+		String scriptName = request.getParameter("scriptName");
+		String ip1ActualFullName = request.getParameter("input1");
+		String ip1DefinedVarNameInCode = request.getParameter("definedVar1");
+		String ip2ActualFullName = request.getParameter("input2");
+		String ip2DefinedVarNameInCode = request.getParameter("definedVar2");
+		String aboutScript = request.getParameter("aboutScript");
+		System.out.println(scriptName+","+ip1ActualFullName+","+ip1DefinedVarNameInCode+","+ip2ActualFullName+","+ip2DefinedVarNameInCode+","+aboutScript);
 		
 		Part filePart = request.getPart("file");
-	    String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+	    String uploadedFileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
 	    InputStream fileContent = filePart.getInputStream();
-	    File targetFile = new File("/Users/Dell/Desktop/Office Stuff/Automaniac/src/com/UploadedFiles/"+fileName);
+	    File targetFile = new File("/Users/Dell/Desktop/Office Stuff/Automaniac/src/com/UploadedFiles/"+uploadedFileName);
 	    FileUtils.copyInputStreamToFile(fileContent, targetFile);
 	    
+		Random r = new Random();
+		String username="Ateeb_Run";//take this from session value
+		int scriptId=r.nextInt(1000);
+		String GeneratedScriptFileName=username+"_"+scriptId;
+
+	    
+	    System.out.println("fileName in servlet - "+uploadedFileName);
+	    String[] fname = {uploadedFileName,GeneratedScriptFileName};
+	    FileHandling.main(fname);
 	    response.sendRedirect("editpage_html.html");
 	}
 }

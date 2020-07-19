@@ -29,10 +29,10 @@ public class RunUpload extends HttpServlet {
 	{
 		System.out.println("Servlet Called to Run Script...");
 		String ip1 = request.getParameter("ScriptInput1");
-		String ip2 = request.getParameter("ScriptInput2");
+//		String ip2 = request.getParameter("ScriptInput2"); working for FB
 		//add required code here to take user keyword(task-2)
 		try {
-			RunScript.runScriptMethod(ip1,ip2);
+			RunScript.runScriptMethod(ip1);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
