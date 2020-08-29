@@ -15,7 +15,7 @@ public class GoogleSearch {
 
 		WebDriver driver = null;
 
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Dell\\Desktop\\Office Stuff\\DemoApp\\Driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Dell\\Desktop\\Office Stuff\\Automaniac\\Driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(25,TimeUnit.SECONDS);
 		

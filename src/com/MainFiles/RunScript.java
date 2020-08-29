@@ -1,5 +1,6 @@
 package com.MainFiles;
 
+import com.RunFiles.Ateeb_Run_1349;
 import com.UploadedFiles.*;
 
 public class RunScript {
@@ -18,7 +19,7 @@ public class RunScript {
 	public static void runScriptMethod(String id/*,String pass*/) throws InterruptedException {
 
 		//working google code
-		GoogleSearch.Test(id);
+		Ateeb_Run_1349.Test(id);
 		
 		//working fb code
 //		FbDataErase_GW.Test(id,pass);//Dynamically take that specific corresponding method using if DB mapping and checks
